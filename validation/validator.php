@@ -40,8 +40,10 @@ if(isset($_POST['btn-output']))
       
         move_uploaded_file($tmp_name, $dirpath.'/img/'.$nameFile);
            
-       array_push($arrResult, $surName, $firstName, $fatherName, $nameFile, $age, $education, $experience, $about);
+        array_push($arrResult, $surName, $firstName, $fatherName, $nameFile, $age, $education, $experience, $about);
+
         $_SESSION['dataOutput'] = $arrResult;
+
         header('Location: /page.php');
      
 
@@ -49,6 +51,12 @@ if(isset($_POST['btn-output']))
     }
     else
     {
+        if($_FILES['photoInpt']['error'])
+        {
+
+            $_SESSION['errorFile'] = $phpFileUploadErrors[$_FILES['photoInpt']['error']];
+        }
+
         $_SESSION['errorMessage'] = 'Всі поля повинні бути заповненні';
         echo "<script>history.back()</script>";
     }

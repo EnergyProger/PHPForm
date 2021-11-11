@@ -18,7 +18,7 @@
             <th>Фото</th>
             <th>Вiк</th>
             <th>Освiта</th>
-            <th>Досвiд</th>
+            <th>Стаж роботи</th>
             <th>Про себе</th>
         </tr>
         <tr>
@@ -29,11 +29,7 @@
                 <td align="center"><?php echo $value;?></td>
                 <?php endif;?>
             <?php endforeach; ?>
-           
-           
-           
         </tr>
-        <!--  -->
     </table>
    </div>
 </body>

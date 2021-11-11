@@ -52,6 +52,12 @@
             <input type="text" id="fatherName" name="fatherName" placeholder="Вас по батькові">
         </div>
 
+        <?php if(isset($_SESSION['errorFile'])):?>
+            <div class="error">
+                <p><?php echo $_SESSION['errorFile'];?></p>
+            </div>
+        <?php endif;?>
+        <?php unset($_SESSION['errorFile']);?>
        <div class="row">
             <label for="photoInpt">Фото</label>
             <input type="file" id="photoInpt" name="photoInpt">
